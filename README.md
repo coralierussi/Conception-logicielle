@@ -9,3 +9,5 @@ Mineurs et étudiants (-25 ans)
 ### Use case
 
 ### Séquence
+
+### Classe
