@@ -21,7 +21,7 @@ sequenceDiagram
     Animal ->> Prgm : nom animal
     Prgm ->> Prgm : Afficher (name)
 ```
-
+![alt text](image.png)
 
 ## Class
 ``` ts
