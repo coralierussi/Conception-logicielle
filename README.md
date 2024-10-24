@@ -90,11 +90,10 @@ classDiagram
 
 ```
 
-### Code
+## Code
 #### Paiement maintenant
 
 ```ts
-/*BDD*/
 class BDD {
   public _pseudo: string;
   public _mail: string;
@@ -110,36 +109,45 @@ class BDD {
   }
  
   creerUser() {
-       return this._id= Math.floor(65165165165);
+       return this._id= Math.floor(1000);
   }
-
+ //
   updateCoordoneeBancaire(newCoordonneesBancaire: number) {
-    console.log ("Confirmation de mise à jour")
-    return this._coordonneesBancaire= newCoordonneesBancaire;
+      return this._coordonneesBancaire= newCoordonneesBancaire;
   }
  
   updateUser(nom: string, prenom: string, password: string){
-    this._nom = nom;
-    this._prenom = prenom;
-    this._password = password;
-    return this;
+        this._nom = nom;
+        this._prenom = prenom;
+        this._password = password;
+        return this;
     }
- 
- 
 }
-
+ 
+ 
+class Banque {
+  public _autorisation: boolean = false;
+ 
+  constructor() {
+  }
+ 
+  getAutorise(coordonneesBancaire: number) {
+       return this._autorisation= true;
+  }
+ //
+}
+ 
+ 
 const coco = new BDD("Coco38", "coco@gmail.com");
 coco.creerUser()
-console.log("Redirection vers un lien paiement Paypal ou Visa")
-console.log ("Remplir renseignement de paiement : ")
-
+console.log("Bienvenue "+ coco._pseudo)
+ 
 coco.updateCoordoneeBancaire(152645)
-console.log("Accès au jeu")
-console.log("Compléter le compte")
 coco.updateUser("Russi","Coralie","toto38")
 console.log(coco)
-
-/*Banque*/
-
+ 
+const bank = new Banque()
+bank.getAutorise(coco._coordonneesBancaire)
+console.log(bank)
 
 ```
