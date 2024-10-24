@@ -15,6 +15,19 @@ classDiagram
 ```
 2. le diagramme de séquence avec Mermaid ( / 8)
 ```ts
+/*
+sequenceDiagram
+
+    participant Prgm
+    actor Person 
+
+    Prgm->>Person: Demander des infos (name, age, vivant?)
+    Person ->> Prgm : Réponse
+    Prgm->>Person: 
+    Person ->> Prgm : 
+    Prgm->>Person:     
+    Person ->> Prgm : 
+*/
 ```
 
 ```typescript
