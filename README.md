@@ -34,6 +34,8 @@ Mineurs et étudiants (-25 ans)
     Base de Données->>PGM: ok
     PGM ->>Utilisateur : Mail de confirmation creation du compte
 ```
+
+![Img diagramme de séquence paiement now](image-3.png)
 #### Paiement plus tard
 
 ### Classe
