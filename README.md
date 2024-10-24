@@ -33,8 +33,7 @@ Mineurs et étudiants (-25 ans)
     PGM->>Base de Données: Met à jour informations utilisateur complet (email?, mtp,id compte anonyme)
     Base de Données->>PGM: ok
     PGM ->>Utilisateur : Mail de confirmation creation du compte
-
-``` 
+```
 #### Paiement plus tard
 
 ### Classe
