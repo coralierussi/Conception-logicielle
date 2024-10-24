@@ -33,3 +33,4 @@ classDiagram
     Animal: +voice()
     Animal: +ohnanaWhatsMyName()
 ```
+![alt text](image-1.png)
