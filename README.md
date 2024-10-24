@@ -7,7 +7,26 @@ On se concentre sur "Conclure" du tunnel d'achat.
 Mineurs et étudiants (-25 ans)
 ## Diagramme
 ### Use case
+#### Code sur PlantUML WebServer
+[Lien](https://www.plantuml.com/plantuml/uml/JP3D2eCm48JlUOh5kmUrvoBOdwi8VO0bRcBG9YNPj9JITwzQ2TvczviPbgq3e-TudyH4Ye4TUAC7XjvuacoS5IZPURX62WmOG8i7oX4rGUkTeX1c3qxm4G1_PpEGMemoRRABSpqqth2HsOAK5DzKqyt563rQNajY88c183iZmn9S4xUcsBCMtw3cvXqlz_paZHqtKEr1Hqz3huqSvYkKX3m_heFUL95KcLGbQhBzygOV)
 
+```
+@startuml
+left to right direction
+actor Enfant as e
+ 
+package Paiement {
+  usecase "Paiement maintenant" as UC1
+  usecase "Paiement plus tard" as UC2
+ 
+ 
+}
+ 
+e --> UC1
+e --> UC2
+@enduml
+```
+![alt text](image-6.png)
 ### Séquence
 #### Paiement maintenant
 
