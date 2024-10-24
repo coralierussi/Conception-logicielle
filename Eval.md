@@ -4,7 +4,18 @@
 
 A partir du code suivant, réaliser :
 1. le diagramme de classe avec Mermaid ( / 4)
+```ts
+classDiagram
+    Person
+    Person : +string name
+    Person : +number age
+    Person: +veillir()
+    Person: +mourir()
+    Person: +renaissance()
+```
 2. le diagramme de séquence avec Mermaid ( / 8)
+```ts
+```
 
 ```typescript
 class Person {
