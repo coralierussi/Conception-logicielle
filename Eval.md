@@ -70,6 +70,16 @@ console.log("fausse joie, il est de retour pour vous jouer un mauvais tour", stu
 
 A partir du diagramme de séquence suivant, réaliser :
 1. le diagramme de classe avec Mermaid ( / 5)
+``` ts
+classDiagram
+    class Maison{
+    +string : couleur
+    +string : infoMaison
+    +creerMaison(grenoble, 120m2, 100000€)
+    +peindre()
+    }
+
+```
 2. le code correspondant ( / 3)
 
 ```mermaid
