@@ -89,7 +89,7 @@ sequenceDiagram
 ```
 ![alt text](image-7.png)
 
-### Classe
+### Class
 
 #### Paiement maintenant
 
@@ -119,6 +119,44 @@ classDiagram
 #### Paiement plus tard
 
 ```ts
+classDiagram
+    class Banque{
+        -autorisation :boolean = false
+        + getAutorisation (coordonneesBancaire: int)
+    }
+    
+
+    class BDD {
+        -pseudo :string
+        -mail :string
+        -password: string
+        -id: number
+        -prenom: string
+        -nom : string
+        -dateIncrisption: Date
+        -dateAnniversaire: Date
+        -coordonneesBancaire: null
+        -relanceNiveau: null
+        -payer: boolean = false
+        - mort : boolean = false
+        + creerUser()
+        + updateCoordonneesBancaire()
+        + updateUser()
+        + verifPayer()
+    }
+   
+   class Relance{
+    -dateIncrisption: Date
+    -dateAnniversaire: Date
+    -relanceNiveau: number
+    +relancer()
+    +engagerTueur()
+   }
+
+   class Authentification{
+    -pieceID :boolean = false
+    + getAutorisation (pieceID)
+   }
 
 ```
 
