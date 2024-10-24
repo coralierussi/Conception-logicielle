@@ -5,9 +5,8 @@ Création d'un site / jeu vidéo pour une formation sur le DarkWeb avec un syst�
 On se concentre sur "Conclure" du tunnel d'achat.
 ## Cibles
 Mineurs et étudiants (-25 ans)
-## Diagramme
 ### Use case
-#### Code sur PlantUML WebServer
+Code sur PlantUML WebServer
 [Lien](https://www.plantuml.com/plantuml/uml/JP3D2eCm48JlUOh5kmUrvoBOdwi8VO0bRcBG9YNPj9JITwzQ2TvczviPbgq3e-TudyH4Ye4TUAC7XjvuacoS5IZPURX62WmOG8i7oX4rGUkTeX1c3qxm4G1_PpEGMemoRRABSpqqth2HsOAK5DzKqyt563rQNajY88c183iZmn9S4xUcsBCMtw3cvXqlz_paZHqtKEr1Hqz3huqSvYkKX3m_heFUL95KcLGbQhBzygOV)
 
 ```
@@ -26,9 +25,9 @@ e --> UC1
 e --> UC2
 @enduml
 ```
-![alt text](image-6.png)
-### Séquence
-#### Paiement maintenant
+![Use case](image-6.png)
+### Paiement maintenant
+#### Séquence
 
 ```ts
      participant PGM
@@ -55,43 +54,8 @@ e --> UC2
 ```
 
 ![Img diagramme de séquence paiement now](image-3.png)
-#### Paiement plus tard
-``` ts
-sequenceDiagram
-    participant PGM
-    participant Banque
-    participant Base de Données
-    participant Autentification
-    actor Verificateur Identite
-    participant Relance
-    actor Tueur à cage
-    actor Utilisateur
- 
-    PGM ->>PGM : page creation compte
-    PGM->>Base de Données: Demande de creation compte (mail,pseudo,nom,prenom,mot de passe, carte identité)
-    Base de Données ->> Autentification : demande de verification identité
-    Autentification ->> Verificateur Identite : verification des documents reçus
-    Verificateur Identite ->> Autentification : document certifié
-    Autentification ->> Base de Données : Creation utilisateur
-    Base de Données->>PGM: id compte
-    PGM ->> PGM: Acces au jeu
-    PGM->> Utilisateur: Envoie email de confirmation de creation de compte
-    PGM ->> Base de Données : verifier user payé
-    Base de Données ->> PGM : paye (non) / date d'inscription / date d'anniversaire
-    PGM ->> Relance : mise en place Relance
-    Relance ->> Utilisateur : relancer par niveau 1ere fois
-    Relance ->> Base de Données: stockage de la relance 1
-    Relance ->> Utilisateur : relancer par niveau 2eme fois
-    Relance ->> Base de Données: stockage de la relance 2
-    Relance ->> Tueur à cage : relancer par niveau 3eme fois = Engager notre tueur
-    Tueur à cage ->> Utilisateur : Tuer la cible
-    Relance ->> Base de Données: stockage de la relance 3 / update user
-```
-![Diagramm séquence payer plus tard](image-7.png)
 
-### Class
-
-#### Paiement maintenant
+#### Class
 
 ```ts
 classDiagram
@@ -116,53 +80,7 @@ classDiagram
 ```
 ![Diagramm de class payer now](image-4.png)
 
-#### Paiement plus tard
-
-```ts
-classDiagram
-    class Banque{
-        -autorisation :boolean = false
-        + getAutorisation (coordonneesBancaire: int)
-    }
-    
-
-    class BDD {
-        -pseudo :string
-        -mail :string
-        -password: string
-        -id: number
-        -prenom: string
-        -nom : string
-        -dateIncrisption: Date
-        -dateAnniversaire: Date
-        -coordonneesBancaire: null
-        -relanceNiveau: null
-        -payer: boolean = false
-        - mort : boolean = false
-        + creerUser()
-        + updateCoordonneesBancaire()
-        + updateUser()
-        + verifPayer()
-    }
-   
-   class Relance{
-    -dateIncrisption: Date
-    -dateAnniversaire: Date
-    -relanceNiveau: number
-    +relancer()
-    +engagerTueur()
-   }
-
-   class Authentification{
-    -pieceID :boolean = false
-    + getAutorisation (pieceID)
-   }
-
-```
-![Diagramm de class payer plus tard](image-8.png)
-
-## Code
-#### Paiement maintenant
+#### Code
 
 ```ts
 class BDD {
@@ -222,3 +140,85 @@ bank.getAutorise(coco._coordonneesBancaire)
 console.log(bank)
 
 ```
+
+### Paiement plus tard
+#### Diagramme de séquence
+``` ts
+sequenceDiagram
+    participant PGM
+    participant Banque
+    participant Base de Données
+    participant Autentification
+    actor Verificateur Identite
+    participant Relance
+    actor Tueur à cage
+    actor Utilisateur
+ 
+    PGM ->>PGM : page creation compte
+    PGM->>Base de Données: Demande de creation compte (mail,pseudo,nom,prenom,mot de passe, carte identité)
+    Base de Données ->> Autentification : demande de verification identité
+    Autentification ->> Verificateur Identite : verification des documents reçus
+    Verificateur Identite ->> Autentification : document certifié
+    Autentification ->> Base de Données : Creation utilisateur
+    Base de Données->>PGM: id compte
+    PGM ->> PGM: Acces au jeu
+    PGM->> Utilisateur: Envoie email de confirmation de creation de compte
+    PGM ->> Base de Données : verifier user payé
+    Base de Données ->> PGM : paye (non) / date d'inscription / date d'anniversaire
+    PGM ->> Relance : mise en place Relance
+    Relance ->> Utilisateur : relancer par niveau 1ere fois
+    Relance ->> Base de Données: stockage de la relance 1
+    Relance ->> Utilisateur : relancer par niveau 2eme fois
+    Relance ->> Base de Données: stockage de la relance 2
+    Relance ->> Tueur à cage : relancer par niveau 3eme fois = Engager notre tueur
+    Tueur à cage ->> Utilisateur : Tuer la cible
+    Relance ->> Base de Données: stockage de la relance 3 / update user
+```
+![Diagramm séquence payer plus tard](image-7.png)
+
+
+#### Diagramme de classe
+
+```ts
+classDiagram
+    class Banque{
+        -autorisation :boolean = false
+        + getAutorisation (coordonneesBancaire: int)
+    }
+    
+
+    class BDD {
+        -pseudo :string
+        -mail :string
+        -password: string
+        -id: number
+        -prenom: string
+        -nom : string
+        -dateIncrisption: Date
+        -dateAnniversaire: Date
+        -coordonneesBancaire: null
+        -relanceNiveau: null
+        -payer: boolean = false
+        - mort : boolean = false
+        + creerUser()
+        + updateCoordonneesBancaire()
+        + updateUser()
+        + verifPayer()
+    }
+   
+   class Relance{
+    -dateIncrisption: Date
+    -dateAnniversaire: Date
+    -relanceNiveau: number
+    +relancer()
+    +engagerTueur()
+   }
+
+   class Authentification{
+    -pieceID :boolean = false
+    + getAutorisation (pieceID)
+   }
+
+```
+![Diagramm de class payer plus tard](image-8.png)
+
