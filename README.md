@@ -46,7 +46,7 @@ Mineurs et étudiants (-25 ans)
 classDiagram
     class Banque{
         -autorisation :boolean =true
-        + getAutorisation (coordonneesBanque: int)
+        + getAutorisation (coordonneesBancaire: int)
     }
     
 
@@ -63,7 +63,7 @@ classDiagram
     }
    
 ```
-![alt text](image-4.png)
+![alt text](image-5.png)
 
 #### Paiement plus tard
 
