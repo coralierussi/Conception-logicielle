@@ -15,13 +15,12 @@ sequenceDiagram
     Animal->> Animal : changeToDog
     Animal ->> Prgm : Ok
     Prgm->>Animal: voice
-    Animal->> Animal : Afficher (type + nom)
     Animal ->> Prgm : afficher (type + nom)
     Prgm->>Animal: ohnanaWhatsMyName ()
     Animal ->> Prgm : nom animal
     Prgm ->> Prgm : Afficher (name)
 ```
-![alt text](image.png)
+![alt text](image-2.png)
 
 ## Class
 ``` ts
