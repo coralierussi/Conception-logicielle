@@ -39,3 +39,27 @@ Mineurs et étudiants (-25 ans)
 #### Paiement plus tard
 
 ### Classe
+
+#### Paiement maintenant
+
+```ts
+classDiagram
+    class Banque{
+        -autorisation :boolean =true
+        + Envoyer détails de transaction + autorisation ()
+    }
+    
+
+    class BDD {
+        -pseudo :string
+        -mail :string
+        -id: null
+        -prenom: null
+        -nom : null
+        -coordonneesBanque: null
+        + creerUser()
+        + updateCoordonneesBanque()
+        + updateUser()
+    }
+   
+```
