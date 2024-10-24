@@ -81,6 +81,30 @@ classDiagram
 
 ```
 2. le code correspondant ( / 3)
+``` ts
+class Maison{
+    public _couleur:string;
+    public _infoMaison:string;
+
+    constructor(couleur:string, infoMaison:string){
+        this._couleur = couleur;
+        this._infoMaison = infoMaison;
+    }
+
+    creerMaison(){
+        return this._infoMaison;
+    }
+
+    peindre(){
+        return this._couleur;
+    }
+}
+
+const m = new Maison("rouge");
+m.peindre()
+console.log("La couleur de la maison est " + m.peindre())
+```
+
 
 ```mermaid
 sequenceDiagram
