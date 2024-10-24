@@ -70,3 +70,10 @@ classDiagram
 ```ts
 
 ```
+
+### Code
+#### Paiement maintenant
+
+```ts
+
+```
