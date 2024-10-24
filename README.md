@@ -87,6 +87,7 @@ sequenceDiagram
     Tueur à cage ->> Utilisateur : Tuer la cible
     Relance ->> Base de Données: stockage de la relance 3 / update user
 ```
+![alt text](image-7.png)
 
 ### Classe
 
