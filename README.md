@@ -56,6 +56,37 @@ e --> UC2
 
 ![Img diagramme de séquence paiement now](image-3.png)
 #### Paiement plus tard
+``` ts
+sequenceDiagram
+    participant PGM
+    participant Banque
+    participant Base de Données
+    participant Autentification
+    actor Verificateur Identite
+    participant Relance
+    actor Tueur à cage
+    actor Utilisateur
+ 
+    PGM ->>PGM : page creation compte
+    PGM->>Base de Données: Demande de creation compte (mail,pseudo,nom,prenom,mot de passe, carte identité)
+    Base de Données ->> Autentification : demande de verification identité
+    Autentification ->> Verificateur Identite : verification des documents reçus
+    Verificateur Identite ->> Autentification : document certifié
+    Autentification ->> Base de Données : Creation utilisateur
+    Base de Données->>PGM: id compte
+    PGM ->> PGM: Acces au jeu
+    PGM->> Utilisateur: Envoie email de confirmation de creation de compte
+    PGM ->> Base de Données : verifier user payé
+    Base de Données ->> PGM : paye (non) / date d'inscription / date d'anniversaire
+    PGM ->> Relance : mise en place Relance
+    Relance ->> Utilisateur : relancer par niveau 1ere fois
+    Relance ->> Base de Données: stockage de la relance 1
+    Relance ->> Utilisateur : relancer par niveau 2eme fois
+    Relance ->> Base de Données: stockage de la relance 2
+    Relance ->> Tueur à cage : relancer par niveau 3eme fois = Engager notre tueur
+    Tueur à cage ->> Utilisateur : Tuer la cible
+    Relance ->> Base de Données: stockage de la relance 3 / update user
+```
 
 ### Classe
 
