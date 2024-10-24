@@ -63,7 +63,7 @@ classDiagram
     }
    
 ```
-
+![alt text](image-4.png)
 
 #### Paiement plus tard
 
