@@ -75,5 +75,52 @@ classDiagram
 #### Paiement maintenant
 
 ```ts
+/*BDD*/
+class BDD {
+  public _pseudo: string;
+  public _mail: string;
+  public _id: number = null;
+  public _prenom : string = null;
+  public _nom : string = null;
+  public _coordonneesBancaire : number ;
+  public _password: string =null;
+ 
+  constructor(pseudo: string, mail: string) {
+      this._pseudo = pseudo;
+      this._mail = mail;
+  }
+ 
+  creerUser() {
+       return this._id= Math.floor(65165165165);
+  }
+
+  updateCoordoneeBancaire(newCoordonneesBancaire: number) {
+    console.log ("Confirmation de mise à jour")
+    return this._coordonneesBancaire= newCoordonneesBancaire;
+  }
+ 
+  updateUser(nom: string, prenom: string, password: string){
+    this._nom = nom;
+    this._prenom = prenom;
+    this._password = password;
+    return this;
+    }
+ 
+ 
+}
+
+const coco = new BDD("Coco38", "coco@gmail.com");
+coco.creerUser()
+console.log("Redirection vers un lien paiement Paypal ou Visa")
+console.log ("Remplir renseignement de paiement : ")
+
+coco.updateCoordoneeBancaire(152645)
+console.log("Accès au jeu")
+console.log("Compléter le compte")
+coco.updateUser("Russi","Coralie","toto38")
+console.log(coco)
+
+/*Banque*/
+
 
 ```
