@@ -87,7 +87,7 @@ sequenceDiagram
     Tueur à cage ->> Utilisateur : Tuer la cible
     Relance ->> Base de Données: stockage de la relance 3 / update user
 ```
-![alt text](image-7.png)
+![Diagramm séquence payer plus tard](image-7.png)
 
 ### Class
 
@@ -114,7 +114,7 @@ classDiagram
     }
    
 ```
-![alt text](image-4.png)
+![Diagramm de class payer now](image-4.png)
 
 #### Paiement plus tard
 
@@ -159,7 +159,7 @@ classDiagram
    }
 
 ```
-![alt text](image-8.png)
+![Diagramm de class payer plus tard](image-8.png)
 
 ## Code
 #### Paiement maintenant
